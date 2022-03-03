@@ -1,0 +1,28 @@
+.wrapper{
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 8px;
+}
+.todoCheck{
+    display: flex;
+    align-items: center;
+    grid-gap: 5px;
+}
+.todoCheck > p{
+    margin: 0;
+ word-break: break-all;
+}
+.buttons{
+    display: flex;
+    grid-gap: 8px;
+}
+.done{
+    text-decoration: line-through;
+    color: rgb(129, 129, 127);
+}
+.buttons > button > img{
+height: 20px;
+width: 20px;
+}

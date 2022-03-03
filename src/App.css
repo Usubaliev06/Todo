@@ -1,0 +1,15 @@
+.App {
+  border:  1px solid rgb(203, 199, 199);
+  width: 555px;
+  margin: 120px auto;
+  border-radius: 5px;
+}
+.main{
+  padding: 15px;
+}
+.todo_wrapper{
+  border:  1px solid rgb(203, 199, 199);
+}
+.todo_wrapper > div:nth-child(even){
+background: rgb(241, 239, 239) ;
+}
