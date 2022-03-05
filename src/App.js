@@ -93,6 +93,7 @@ class App extends Component {
       </div>
     }
     return (
+    <div className='container'>
       <div className='App'>
         <Header count={this.state.todos.length}
           done={this.state.todos.filter((todo) => todo.status).length} />
@@ -106,6 +107,7 @@ class App extends Component {
           />
 
         </main>
+        </div>
       </div>
     )
   }
