@@ -85,7 +85,11 @@ class App extends Component {
   render() {
     if (this.state.isLoading) {
       return <div className='text-center  mt-5'>
-        <img width={"150px"} src="https://c.tenor.com/pgO8hZgOW5AAAAAM/loading-bar.gif"></img>
+        <img
+         width={"150px"} 
+         src="https://c.tenor.com/pgO8hZgOW5AAAAAM/loading-bar.gif" 
+         alt='#'>
+        </img>
       </div>
     }
     return (
