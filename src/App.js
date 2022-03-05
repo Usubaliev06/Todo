@@ -17,9 +17,9 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      todos: [
-      
-      ],
+      todos: [],
+      isLoading: true,
+
     }
     this.handleCreateTodo = this.handleCreateTodo.bind(this)
     this.onDelete = this.onDelete.bind(this)
@@ -28,19 +28,22 @@ class App extends Component {
     // this.onChange=this.onChange.bind(this)
   }
 
-componentDidMount(){
-const localData =JSON.parse(localStorage.getItem('todos')) || [];
-this.setState({todos: localData})
-}
+  componentDidMount() {
+    const localData = JSON.parse(localStorage.getItem('todos')) || [];
+    this.setState({ todos: localData })
+    setTimeout(() => {
+      this.setState({ isLoading: false })
+    }, 2500)
+  }
 
-componentDidUpdate(){
-  localStorage.setItem("todos",JSON.stringify(this.state.todos))
+  componentDidUpdate() {
+    localStorage.setItem("todos", JSON.stringify(this.state.todos))
 
-}
+  }
 
-componentWillUnmount(){
+  componentWillUnmount() {
 
-}
+  }
 
 
 
@@ -80,10 +83,15 @@ componentWillUnmount(){
   }
 
   render() {
+    if (this.state.isLoading) {
+      return <div className='text-center  mt-5'>
+        <img width={"150px"} src="https://c.tenor.com/pgO8hZgOW5AAAAAM/loading-bar.gif"></img>
+      </div>
+    }
     return (
       <div className='App'>
         <Header count={this.state.todos.length}
-         done={this.state.todos.filter((todo)=>todo.status).length }/>
+          done={this.state.todos.filter((todo) => todo.status).length} />
         <main className='main'>
           <CreateTodo onCreate={this.handleCreateTodo} />
           <TodoLists
